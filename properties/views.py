@@ -8,5 +8,5 @@ from .utils import get_all_properties
 @csrf_exempt
 @cache_page(60 * 15)
 def property_list(request):
-    properties = get_all_properties
+    properties = get_all_properties()
     return JsonResponse({'data': list(properties)}, safe=False)
