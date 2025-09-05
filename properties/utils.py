@@ -3,7 +3,6 @@ from django.core.cache import cache
 import logging
 from django_redis import get_redis_connection
 
-logger = logging.getLogger(__name__)
 
 
 def get_all_properties():
@@ -14,6 +13,9 @@ def get_all_properties():
         ))
         cache.set('all_properties', properties, timeout=3600)
     return properties
+
+
+logger = logging.getLogger(__name__)
 
 
 def get_redis_cache_metrics():
