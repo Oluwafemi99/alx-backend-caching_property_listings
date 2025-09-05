@@ -2,7 +2,7 @@ from .models import Property
 from django.core.cache import cache
 
 
-def getallproperties():
+def get_all_properties():
     properties = cache.get('all_properties')
     if properties is None:
         properties = list(Property.objects.all().values(
